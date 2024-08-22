@@ -12,11 +12,7 @@ class TestDeliveryMRW(common.TransactionCase):
             "web.external_layout_standard"
         )
         self.shipping_product = self.env["product.product"].create(
-            {
-                "type": "service",
-                "name": "Test Shipping costs",
-                "list_price": 10.0,
-            }
+            {"type": "service", "name": "Test Shipping costs", "list_price": 10.0}
         )
         self.carrier_mrw = self.env.ref("delivery_mrw.mrw_carrier_test")
         self.carrier_mrw.write(
@@ -26,10 +22,7 @@ class TestDeliveryMRW(common.TransactionCase):
             }
         )
         self.product = self.env["product.product"].create(
-            {
-                "type": "product",
-                "name": "Test product",
-            }
+            {"type": "product", "name": "Test product"}
         )
         stock_location = self.env.ref("stock.stock_location_stock")
         inventory = self.env["stock.quant"].create(
@@ -50,6 +43,7 @@ class TestDeliveryMRW(common.TransactionCase):
                 "street": "Calle de La Rua, 3",
                 "street2": "4-1",
                 "country_id": spain.id,
+                "phone": "777777777",
             }
         )
         order_form = Form(self.env["sale.order"].with_context(tracking_disable=True))

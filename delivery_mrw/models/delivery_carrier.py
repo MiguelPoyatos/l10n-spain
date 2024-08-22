@@ -318,7 +318,8 @@ class DeliveryCarrier(models.Model):
                 "Bultos": "",
                 "NumeroBultos": picking.number_of_packages or 1,
                 "Peso": str(picking.shipping_weight).replace(".", ","),
-                "Notificaciones": self.get_notifications(receiving_partner),
+                "Notificaciones": self.get_notifications(receiving_partner)
+                # Hay más campos no obligatorios no puestos aqui
             },
         }
 

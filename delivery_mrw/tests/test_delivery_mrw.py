@@ -38,7 +38,6 @@ class TestDeliveryMRW(common.TransactionCase):
             {
                 "name": "Mr. Odoo & Co.",
                 "city": "Madrid",
-                "phone": "+34 91 123 45 67",
                 "zip": "28001",
                 "street": "Calle de La Rua, 3",
                 "street2": "4-1",
@@ -77,10 +76,7 @@ class TestDeliveryMRW(common.TransactionCase):
         self.picking.move_ids.quantity_done = self.picking.move_ids.product_uom_qty
         self.picking.button_validate()
         wizard = self.env["mrw.manifest.wizard"].create(
-            {
-                "carrier_id": self.carrier_mrw.id,
-                "date_from": datetime.date.today(),
-            }
+            {"carrier_id": self.carrier_mrw.id, "date_from": datetime.date.today()}
         )
         manifest_data = wizard.get_manifest()["data"]["deliveries"]
         self.assertEqual(

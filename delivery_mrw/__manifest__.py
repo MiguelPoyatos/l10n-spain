@@ -13,11 +13,7 @@
         "delivery_package_number",
         "delivery_state",
     ],
-    "external_dependencies": {
-        "python": [
-            "zeep",
-        ],
-    },
+    "external_dependencies": {"python": ["zeep"]},
     "data": [
         "views/delivery_mrw_view.xml",
         "views/stock_picking_views.xml",

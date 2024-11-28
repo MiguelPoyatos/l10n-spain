@@ -34,6 +34,7 @@
                             />
                         </group>
                         <group string="Service">
+<!--                            we make international shipping invisible because it's not supported-->
                             <field
                                 name="international_shipping"
                                 invisible="1"
